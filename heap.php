@@ -9,6 +9,7 @@ class Heap{
         return 2*$i + 1;
     }
 
+    
     public function right($i){
         return 2*$i + 2;
     }

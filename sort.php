@@ -28,8 +28,7 @@ function mergeSort(&$a, $start, $end){
         }
 
         mergeSort($l, 0, count($l)-1);
-        mergeSort($r, 0, count($r)-1);        
-     
+        mergeSort($r, 0, count($r)-1);             
 
         $pl = 0;
         $pr = 0;
@@ -63,12 +62,8 @@ function mergeSort(&$a, $start, $end){
                 $pa++;
             }
         }
-
     }
-
-
 }
-
 
 
 function quickSort(&$a, $start, $end){
@@ -88,14 +83,12 @@ function quickSort(&$a, $start, $end){
     }
     */
     else{
-
         $r = rand($start+1, $end-1);            // a random pivot
         $x = $a[$r];
 
         //put the pivot to the end
         $a[$r] = $a[$end];
         $a[$end] = $x;
-
         
         $p_known = $start;                    //pointer for elements known to be < pivot (the element before it is tested to be samller)
         for($i=$start; $i<=$end-1; $i++ ){
@@ -116,17 +109,7 @@ function quickSort(&$a, $start, $end){
 
         quickSort($a, $start, $p_known-1);
         quickSort($a, $p_known+1, $end);
-
-
-
     }
-
-
-
-    
-
-
-
 }
 
 
@@ -151,7 +134,6 @@ function heapSort(&$a){
     for($i=0; $i<$n; $i++){
         $a[$i] = $res[$i];
     }
-
 }
 
 
@@ -178,7 +160,6 @@ function countingSort($a, $bucketrange, $bucket_function){
         }
     }
     return $res;
-
 }
 
 
@@ -186,8 +167,8 @@ function get_number_at_postion($v, $p){
     $divide_by = pow(10, $p);
     $multiple = floor($v / $divide_by);
     return $multiple % 10; 
-
 }
+
 
 function base10radixSort(&$a, $numberOfDigits ){
     for($i=0; $i<numberOfDigits; $i++){

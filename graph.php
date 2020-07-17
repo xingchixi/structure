@@ -79,6 +79,7 @@ Class AdjListGraph{
         return $visited;
     }
 
+
     // recursive cyclic
     public function isCyclic($i){
         return $this->_cyclic($i, []);
@@ -108,8 +109,6 @@ Class AdjListGraph{
     // cyclic using status array
     // array mimics the calling stack
     public function isCyclic2($i){       
-
-
         // at each level
         // history contain nodes with status which are children of current visiting node form the upper level      
         // status:    0: not visited,  1:  visiting
@@ -149,7 +148,6 @@ Class AdjListGraph{
                         
                     }
 
-
                     foreach($this->out_edges($node['value']) as $out){
                         if(in_array($out, $current_path)){
                             $current_path[] = $out;
@@ -163,11 +161,8 @@ Class AdjListGraph{
                             else{
                                 $history[$current_level+1] = [$new_node]; 
                             }
-                        }
-                        
-        
+                        }                                
                     }
-
                 }
                 else if($node['status']==1){
                     //array_pop($history[$current_level]);
@@ -176,23 +171,13 @@ Class AdjListGraph{
                 else{
                     die('wrong status');
                 }
-
-
-
-
             }
             else{
                 unset($history[$current_level]);
                 //echo "\n unsetting";
             }
-
         }
-
         return false;
-
-
-
-
     }
 
 
