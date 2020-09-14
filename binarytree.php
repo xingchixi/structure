@@ -124,6 +124,41 @@ function dfs3($node){
 
 }
 
+
+
+function dfs4($node){
+    $node->status = 0;                      // 0 not visited before.   1: visited before
+    $stack = [$node];
+    $visited = [];
+
+    while(count($stack)>0){
+        $current  = array_pop($stack);
+        if($current->status ==0){
+            $current->status = 1;
+            $stack[] = $current;                        //change the postion of push back to form any order of output
+            if($current->left!=null){
+                $current->left->status = 0;
+                $stack[] = $current->left;
+            }
+            if($current->right!=null){
+                $current->right->status = 0;
+                $stack[] = $current->right;
+            }
+            
+
+        }
+        else{
+            $visited[] = $current;
+        }
+
+    }
+
+    return $visited; 
+
+}
+
+
+
 function bfs3($node){
 
     $history = [];
@@ -255,9 +290,18 @@ function binary_list($node){
         return [];
     }
 
+    // inorder
     return array_merge(binary_list($node->left), [$node], binary_list($node->right));
 }
 
+
+function binary_list_preorder($node){
+    if($node==null){
+        return [];
+    }
+    // pre order
+    return array_merge([$node],  binary_list_preorder($node->left),  binary_list_preorder($node->right));
+}
 
 
 function binary_list2($node){

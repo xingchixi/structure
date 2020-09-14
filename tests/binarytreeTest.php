@@ -57,6 +57,10 @@ final class binarytreeTest extends TestCase
         $s = (getTreeNodesString($seq));
         $this->assertEquals($s, "1, 2, 4, 6, 7, 5, 8, 3, 9");
 
+        $seq = dfs4($nodes[1]);;
+        $s = (getTreeNodesString($seq));
+        $this->assertEquals($s, "9, 3, 8, 5, 7, 6, 4, 2, 1");
+
         $seq = bfs3($nodes[1]);
         $s = (getTreeNodesString($seq));
         $this->assertEquals($s, "1, 2, 3, 4, 5, 9, 6, 7, 8");
@@ -102,6 +106,10 @@ final class binarytreeTest extends TestCase
        $seq = binary_list($node);
        $s = (getTreeNodesString($seq));
        $this->assertEquals($s, "1, 3, 4, 5, 6, 7, 8, 9, 11, 12, 13, 14");
+
+       $seq = binary_list_preorder($node);
+       $s = (getTreeNodesString($seq));
+       $this->assertEquals($s, "7, 3, 1, 5, 4, 6, 11, 9, 8, 13, 12, 14");
 
        $seq = binary_list2($node);
        $s = (getTreeNodesString($seq));

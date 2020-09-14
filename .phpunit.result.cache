@@ -1,1 +1,1 @@
-C:37:"PHPUnit\Runner\DefaultTestResultCache":104:{a:2:{s:7:"defects";a:1:{s:18:"trieTest::testtrie";i:5;}s:5:"times";a:1:{s:18:"trieTest::testtrie";d:0;}}}
+C:37:"PHPUnit\Runner\DefaultTestResultCache":284:{a:2:{s:7:"defects";a:3:{s:18:"trieTest::testtrie";i:5;s:36:"binarytreeTest::testBinarySearchTree";i:3;s:30:"binarytreeTest::testbinarytree";i:4;}s:5:"times";a:3:{s:18:"trieTest::testtrie";d:0;s:30:"binarytreeTest::testbinarytree";d:0;s:36:"binarytreeTest::testBinarySearchTree";d:0;}}}
