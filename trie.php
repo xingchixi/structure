@@ -105,7 +105,9 @@ class Trie{
                     if(!$current->isEnd && count($current->children)==0 ){
                         unset($parent->children[$current->value]);
                     }
-                    
+                    else{
+                        break;                              //already can not delete.  its parents can not be deleted too.  
+                    }
 
                 }
 

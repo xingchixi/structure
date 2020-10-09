@@ -48,8 +48,7 @@ Class AdjListGraph{
         $history[] = $i;
 
         while(count($history)>0){
-            $current = array_shift($history);
-    
+            $current = array_shift($history);    
             $visited[$current] = $current;
             foreach($this->out_edges($current) as $out){
                 if(!isset($visited[$out])){
@@ -105,12 +104,12 @@ Class AdjListGraph{
         }
     }
 
-    
+    // very important!
     // cyclic using status array
     // array mimics the calling stack
     public function isCyclic2($i){       
         // at each level
-        // history contain nodes with status which are children of current visiting node form the upper level      
+        // $history contain nodes with status which are children of current visiting node form the upper level      
         // status:    0: not visited,  1:  visiting
         $history = [];
         $history[] = [['value'=>$i, 'status'=>0]];      

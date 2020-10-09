@@ -129,7 +129,7 @@ class MeldableHeap{
             return $a;
         }
 
-        // make $a the samller one
+        // make $a the one with smaller rootsamller value one
         if($b->value<$a->value){
             $t = $a;
             $a = $b;

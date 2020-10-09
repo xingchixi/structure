@@ -218,6 +218,17 @@ function height($node){
 }
 
 
+function height2($node){
+    if($node==null){
+        return 0;
+    }
+    else{
+        return 1+ max(height2($node->left), height2($node->right));
+    }
+}
+
+
+
 
 //*********************binary serach tree******************* */
 
@@ -303,7 +314,7 @@ function binary_list_preorder($node){
     return array_merge([$node],  binary_list_preorder($node->left),  binary_list_preorder($node->right));
 }
 
-
+// dfs4() is simpler and better!
 function binary_list2($node){
 
     $node->status = 0;          // 0: children not visited,  1: left visited,  2:right visitied
@@ -322,7 +333,7 @@ function binary_list2($node){
         $current =  $path[count($path) - 1];
         if($current->status==0){
             if($current->left!=null){
-                $current->left->status = 0;
+                $current->left->status = 0;                 // we can set status to 1 here instead of change it later by find parent.
                 $path[] = $current->left;
             }
             else{
